@@ -1,0 +1,979 @@
+config is !!!!!!
+GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "block_ratio": 0.0625,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "flash_attention": false,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 2048,
+  "n_embd": 1600,
+  "n_head": 25,
+  "n_inner": null,
+  "n_layer": 48,
+  "n_positions": 2048,
+  "output_past": true,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.42.4",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+skip transformer.h.0.attn.bias
+skip transformer.h.1.attn.bias
+skip transformer.h.2.attn.bias
+skip transformer.h.3.attn.bias
+skip transformer.h.4.attn.bias
+skip transformer.h.5.attn.bias
+skip transformer.h.6.attn.bias
+skip transformer.h.7.attn.bias
+skip transformer.h.8.attn.bias
+skip transformer.h.9.attn.bias
+skip transformer.h.10.attn.bias
+skip transformer.h.11.attn.bias
+skip transformer.h.12.attn.bias
+skip transformer.h.13.attn.bias
+skip transformer.h.14.attn.bias
+skip transformer.h.15.attn.bias
+skip transformer.h.16.attn.bias
+skip transformer.h.17.attn.bias
+skip transformer.h.18.attn.bias
+skip transformer.h.19.attn.bias
+skip transformer.h.20.attn.bias
+skip transformer.h.21.attn.bias
+skip transformer.h.22.attn.bias
+skip transformer.h.23.attn.bias
+skip transformer.h.24.attn.bias
+skip transformer.h.25.attn.bias
+skip transformer.h.26.attn.bias
+skip transformer.h.27.attn.bias
+skip transformer.h.28.attn.bias
+skip transformer.h.29.attn.bias
+skip transformer.h.30.attn.bias
+skip transformer.h.31.attn.bias
+skip transformer.h.32.attn.bias
+skip transformer.h.33.attn.bias
+skip transformer.h.34.attn.bias
+skip transformer.h.35.attn.bias
+skip transformer.h.36.attn.bias
+skip transformer.h.37.attn.bias
+skip transformer.h.38.attn.bias
+skip transformer.h.39.attn.bias
+skip transformer.h.40.attn.bias
+skip transformer.h.41.attn.bias
+skip transformer.h.42.attn.bias
+skip transformer.h.43.attn.bias
+skip transformer.h.44.attn.bias
+skip transformer.h.45.attn.bias
+skip transformer.h.46.attn.bias
+skip transformer.h.47.attn.bias
+model name: gpt2_xl
+torch.Size([2048, 1600])
+GPT2LMHeadModel(
+  (transformer): GPT2Model(
+    (wte): Embedding(50257, 1600)
+    (wpe): Embedding(2048, 1600)
+    (drop): Dropout(p=0.1, inplace=False)
+    (h): ModuleList(
+      (0-47): 48 x GPT2Block(
+        (ln_1): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+        (attn): GPT2Attention(
+          (c_attn): Conv1D()
+          (c_proj): Conv1D()
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (resid_dropout): Dropout(p=0.1, inplace=False)
+        )
+        (ln_2): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+        (mlp): GPT2MLP(
+          (c_fc): Conv1D()
+          (c_proj): Conv1D()
+          (act): NewGELUActivation()
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (ln_f): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+  )
+  (lm_head): Linear(in_features=1600, out_features=50257, bias=False)
+)
+DatasetDict({
+    train: Dataset({
+        features: ['short_book_title', 'publication_date', 'input_ids'],
+        num_rows: 2999
+    })
+    validation: Dataset({
+        features: ['short_book_title', 'publication_date', 'input_ids'],
+        num_rows: 149
+    })
+})
+[2024-08-28 15:18:33,893] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.0
+[93m [WARNING] [0m using untested triton version (2.0.0), only 1.0.0 is known to be compatible
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 9.0943, 'grad_norm': 2.0433924198150635, 'learning_rate': 1.0000000000000002e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.9057, 'grad_norm': 2.2730326652526855, 'learning_rate': 2.0000000000000003e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    49, 50256]], device='cuda:0')
+ 
+{'loss': 9.1552, 'grad_norm': 2.208751678466797, 'learning_rate': 3e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 9.3574, 'grad_norm': 3.965939521789551, 'learning_rate': 4.000000000000001e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.9592, 'grad_norm': 1.9947948455810547, 'learning_rate': 5e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 8.8183, 'grad_norm': 8.072853088378906, 'learning_rate': 6e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 8.8694, 'grad_norm': 2.2661454677581787, 'learning_rate': 7e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 8.736, 'grad_norm': 2.7389907836914062, 'learning_rate': 8.000000000000001e-06, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    70, 50256]], device='cuda:0')
+ 
+{'loss': 8.8998, 'grad_norm': 2.3128457069396973, 'learning_rate': 9e-06, 'epoch': 0.0}
+tensor([[  198, 50256,    47,  ..., 50256,     9, 50256]], device='cuda:0')
+ 
+{'loss': 8.9288, 'grad_norm': 1.9715455770492554, 'learning_rate': 1e-05, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 8.8813, 'grad_norm': 2.008244037628174, 'learning_rate': 1.1000000000000001e-05, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 8.6479, 'grad_norm': 2.3620662689208984, 'learning_rate': 1.2e-05, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,    51, 50256]], device='cuda:0')
+ 
+{'loss': 8.2012, 'grad_norm': 2.726949453353882, 'learning_rate': 1.3000000000000001e-05, 'epoch': 0.0}
+tensor([[   53, 50256,    40,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 8.7404, 'grad_norm': 1.9193012714385986, 'learning_rate': 1.4e-05, 'epoch': 0.0}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.9017, 'grad_norm': 2.011683702468872, 'learning_rate': 1.5000000000000002e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 8.9644, 'grad_norm': 2.097428560256958, 'learning_rate': 1.6000000000000003e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    43, 50256]], device='cuda:0')
+ 
+{'loss': 8.8793, 'grad_norm': 1.9984121322631836, 'learning_rate': 1.7e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 9.0924, 'grad_norm': 4.43301248550415, 'learning_rate': 1.8e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 8.9983, 'grad_norm': 2.1272332668304443, 'learning_rate': 1.9e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 8.8427, 'grad_norm': 2.003769874572754, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    37, 50256]], device='cuda:0')
+ 
+{'loss': 8.9501, 'grad_norm': 2.2078335285186768, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 8.6242, 'grad_norm': 2.396120548248291, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    34, 50256]], device='cuda:0')
+ 
+{'loss': 8.5472, 'grad_norm': 2.1424996852874756, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    56, 50256]], device='cuda:0')
+ 
+{'loss': 8.3719, 'grad_norm': 4.669852256774902, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    44, 50256]], device='cuda:0')
+ 
+{'loss': 8.6278, 'grad_norm': 2.0261754989624023, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    45, 50256]], device='cuda:0')
+ 
+{'loss': 8.6221, 'grad_norm': 2.2870559692382812, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    55, 50256]], device='cuda:0')
+ 
+{'loss': 8.0784, 'grad_norm': 2.4272029399871826, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 8.7146, 'grad_norm': 2.202822208404541, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 8.6329, 'grad_norm': 2.2239742279052734, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 8.5507, 'grad_norm': 2.3477108478546143, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 8.2726, 'grad_norm': 2.622851848602295, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.4771, 'grad_norm': 2.4246156215667725, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[   47, 50256,    81,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 8.1772, 'grad_norm': 2.9147400856018066, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    39, 50256]], device='cuda:0')
+ 
+{'loss': 8.2584, 'grad_norm': 3.67252254486084, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 8.1799, 'grad_norm': 3.9917733669281006, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    13, 50256]], device='cuda:0')
+ 
+{'loss': 8.0985, 'grad_norm': 3.1622791290283203, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    11, 50256]], device='cuda:0')
+ 
+{'loss': 8.2466, 'grad_norm': 2.5141355991363525, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[   45, 50256,    46,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 8.2812, 'grad_norm': 2.2321255207061768, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[   39, 50256,    40,  ..., 50256,    88, 50256]], device='cuda:0')
+ 
+{'loss': 7.8078, 'grad_norm': 3.2447125911712646, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.1986, 'grad_norm': 2.430856227874756, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 8.2201, 'grad_norm': 2.515165090560913, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 8.1302, 'grad_norm': 2.5133168697357178, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    62, 50256]], device='cuda:0')
+ 
+{'loss': 8.459, 'grad_norm': 3.0396728515625, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ..., 50256,    46, 50256]], device='cuda:0')
+ 
+{'loss': 7.5911, 'grad_norm': 2.99714994430542, 'learning_rate': 2e-05, 'epoch': 0.01}
+tensor([[  198, 50256,   198,  ...,    72, 50256,    82]], device='cuda:0')
+ 
+{'loss': 7.6643, 'grad_norm': 3.5016701221466064, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    88, 50256]], device='cuda:0')
+ 
+{'loss': 7.8334, 'grad_norm': 2.5547280311584473, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 7.5387, 'grad_norm': 4.086400985717773, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 7.5322, 'grad_norm': 2.8395192623138428, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 8.1005, 'grad_norm': 4.521320343017578, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    76, 50256]], device='cuda:0')
+ 
+{'loss': 7.5605, 'grad_norm': 2.7775728702545166, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[   51, 50256,    71,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 7.4266, 'grad_norm': 3.6078200340270996, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 7.3323, 'grad_norm': 3.5700795650482178, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[   50, 50256,    34,  ..., 50256,    88, 50256]], device='cuda:0')
+ 
+{'loss': 7.4168, 'grad_norm': 2.963909149169922, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 7.2061, 'grad_norm': 3.048750638961792, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 6.728, 'grad_norm': 8.810391426086426, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    45, 50256]], device='cuda:0')
+ 
+{'loss': 6.448, 'grad_norm': 10.4900541305542, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 6.7793, 'grad_norm': 3.1602444648742676, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 6.7013, 'grad_norm': 3.9051122665405273, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[   49, 50256,    40,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 6.9888, 'grad_norm': 24.02972412109375, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 6.8153, 'grad_norm': 3.274271249771118, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    67, 50256]], device='cuda:0')
+ 
+{'loss': 6.869, 'grad_norm': 3.123257875442505, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 7.0666, 'grad_norm': 4.306629657745361, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    32, 50256]], device='cuda:0')
+ 
+{'loss': 6.2103, 'grad_norm': 3.8234426975250244, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 6.2901, 'grad_norm': 3.901771068572998, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    69, 50256]], device='cuda:0')
+ 
+{'loss': 6.5317, 'grad_norm': 3.0871033668518066, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 6.3032, 'grad_norm': 3.274921417236328, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 6.1529, 'grad_norm': 4.638216972351074, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    11, 50256]], device='cuda:0')
+ 
+{'loss': 6.0863, 'grad_norm': 3.520359992980957, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 6.0619, 'grad_norm': 3.908559560775757, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 6.4857, 'grad_norm': 3.9530694484710693, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    70, 50256]], device='cuda:0')
+ 
+{'loss': 5.6693, 'grad_norm': 3.627056837081909, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    34, 50256]], device='cuda:0')
+ 
+{'loss': 5.9308, 'grad_norm': 3.5352559089660645, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    62, 50256]], device='cuda:0')
+ 
+{'loss': 5.8508, 'grad_norm': 3.5758285522460938, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 5.9637, 'grad_norm': 4.650193691253662, 'learning_rate': 2e-05, 'epoch': 0.02}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 5.3718, 'grad_norm': 3.289977550506592, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 5.1791, 'grad_norm': 3.392848491668701, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 5.5487, 'grad_norm': 28.888164520263672, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 5.4975, 'grad_norm': 4.83835506439209, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 4.9161, 'grad_norm': 3.33388090133667, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 5.3054, 'grad_norm': 3.1010420322418213, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 4.8837, 'grad_norm': 2.9546995162963867, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 5.0444, 'grad_norm': 3.2530388832092285, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 5.1919, 'grad_norm': 11.987452507019043, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 4.8163, 'grad_norm': 2.687922954559326, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 4.9232, 'grad_norm': 21.78697395324707, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,     6, 50256]], device='cuda:0')
+ 
+{'loss': 4.7593, 'grad_norm': 4.838865280151367, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    76, 50256]], device='cuda:0')
+ 
+{'loss': 4.9998, 'grad_norm': 2.496631145477295, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    74, 50256]], device='cuda:0')
+ 
+{'loss': 4.7527, 'grad_norm': 2.6333467960357666, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 4.9351, 'grad_norm': 2.814896583557129, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 4.626, 'grad_norm': 3.6529619693756104, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 4.7462, 'grad_norm': 3.2355399131774902, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 4.4867, 'grad_norm': 3.665451765060425, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[   53, 50256,     9,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.5353, 'grad_norm': 2.7347307205200195, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    70, 50256]], device='cuda:0')
+ 
+{'loss': 4.5997, 'grad_norm': 2.0899171829223633, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    46, 50256]], device='cuda:0')
+ 
+{'loss': 4.4799, 'grad_norm': 9.77733325958252, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.6231, 'grad_norm': 2.264237880706787, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    47, 50256]], device='cuda:0')
+ 
+{'loss': 4.3484, 'grad_norm': 2.002633571624756, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 4.6694, 'grad_norm': 1.6296098232269287, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    13, 50256]], device='cuda:0')
+ 
+{'loss': 3.9742, 'grad_norm': 2.8256471157073975, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 4.3515, 'grad_norm': 1.7747451066970825, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 4.5146, 'grad_norm': 1.5357471704483032, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 4.2871, 'grad_norm': 2.112363338470459, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    69, 50256]], device='cuda:0')
+ 
+{'loss': 4.4108, 'grad_norm': 1.494535207748413, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    50, 50256]], device='cuda:0')
+ 
+{'loss': 3.8759, 'grad_norm': 3.7880051136016846, 'learning_rate': 2e-05, 'epoch': 0.03}
+tensor([[  198, 50256,   198,  ..., 50256,    70, 50256]], device='cuda:0')
+ 
+{'loss': 4.3295, 'grad_norm': 2.000628709793091, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[    9, 50256,     9,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 4.3065, 'grad_norm': 1.4454110860824585, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 4.4623, 'grad_norm': 1.7862505912780762, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 4.3183, 'grad_norm': 3.571869134902954, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.1081, 'grad_norm': 1.686286449432373, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.3205, 'grad_norm': 1.5808511972427368, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 4.0829, 'grad_norm': 1.4355273246765137, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.2682, 'grad_norm': 1.60798180103302, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 4.0503, 'grad_norm': 1.949431300163269, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 4.2187, 'grad_norm': 1.6484308242797852, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    45, 50256]], device='cuda:0')
+ 
+{'loss': 3.9824, 'grad_norm': 1.884189486503601, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 3.9903, 'grad_norm': 1.864974021911621, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 4.1422, 'grad_norm': 2.9112954139709473, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    86, 50256]], device='cuda:0')
+ 
+{'loss': 4.0537, 'grad_norm': 3.435286283493042, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 3.9325, 'grad_norm': 3.0908453464508057, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 4.2734, 'grad_norm': 2.001413345336914, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    82, 50256]], device='cuda:0')
+ 
+{'loss': 3.9317, 'grad_norm': 1.8465386629104614, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.931, 'grad_norm': 1.5577514171600342, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[   51, 50256,    52,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 3.7994, 'grad_norm': 1.302730679512024, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 3.8735, 'grad_norm': 1.6405720710754395, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 3.9465, 'grad_norm': 1.6194908618927002, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.7117, 'grad_norm': 1.4841516017913818, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 3.8271, 'grad_norm': 1.5973198413848877, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 3.7157, 'grad_norm': 1.6491408348083496, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 4.0029, 'grad_norm': 1.8532699346542358, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,    39, 50256]], device='cuda:0')
+ 
+{'loss': 3.5034, 'grad_norm': 1.483905553817749, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 4.1946, 'grad_norm': 2.2626984119415283, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.6223, 'grad_norm': 1.9514472484588623, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[   40, 50256,     9,  ..., 50256,    46, 50256]], device='cuda:0')
+ 
+{'loss': 3.4975, 'grad_norm': 1.5104268789291382, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.6238, 'grad_norm': 1.6393080949783325, 'learning_rate': 2e-05, 'epoch': 0.04}
+tensor([[   33, 50256,    46,  ..., 50256,    13, 50256]], device='cuda:0')
+ 
+{'loss': 3.6354, 'grad_norm': 1.6163365840911865, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 3.5853, 'grad_norm': 1.702161431312561, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    74, 50256]], device='cuda:0')
+ 
+{'loss': 3.4167, 'grad_norm': 1.6962435245513916, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ...,   198, 50256,    68]], device='cuda:0')
+ 
+{'loss': 3.6555, 'grad_norm': 1.6119215488433838, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    86, 50256]], device='cuda:0')
+ 
+{'loss': 3.4846, 'grad_norm': 1.705459475517273, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 3.3536, 'grad_norm': 1.194512128829956, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 3.2138, 'grad_norm': 1.2262383699417114, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 3.2148, 'grad_norm': 1.5872445106506348, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[   41, 50256,    32,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 3.2858, 'grad_norm': 1.6574100255966187, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[    9, 50256,     9,  ..., 50256,    47, 50256]], device='cuda:0')
+ 
+{'loss': 3.3167, 'grad_norm': 1.732844352722168, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 3.3231, 'grad_norm': 1.7575929164886475, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.3034, 'grad_norm': 1.6527974605560303, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 3.0044, 'grad_norm': 1.0699975490570068, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 3.5456, 'grad_norm': 2.267927646636963, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 3.0261, 'grad_norm': 1.970091462135315, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 3.1272, 'grad_norm': 1.5462031364440918, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 3.0098, 'grad_norm': 1.4616367816925049, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.9183, 'grad_norm': 1.8264013528823853, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 2.9122, 'grad_norm': 1.7063721418380737, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.9915, 'grad_norm': 1.9834340810775757, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    76, 50256]], device='cuda:0')
+ 
+{'loss': 2.8541, 'grad_norm': 1.993228793144226, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.7376, 'grad_norm': 1.7471688985824585, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.9774, 'grad_norm': 1.9541350603103638, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    85, 50256]], device='cuda:0')
+ 
+{'loss': 2.8083, 'grad_norm': 1.838409423828125, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    69, 50256]], device='cuda:0')
+ 
+{'loss': 2.8532, 'grad_norm': 0.8726522922515869, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.8111, 'grad_norm': 1.9343092441558838, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.7821, 'grad_norm': 1.7408745288848877, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 2.6718, 'grad_norm': 1.9286843538284302, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 2.6113, 'grad_norm': 1.626838207244873, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.72, 'grad_norm': 3.084940195083618, 'learning_rate': 2e-05, 'epoch': 0.05}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 2.5169, 'grad_norm': 3.895982265472412, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 2.3994, 'grad_norm': 2.456475019454956, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.5963, 'grad_norm': 2.410355806350708, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[   42, 50256,    45,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.8783, 'grad_norm': 11.782276153564453, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.5699, 'grad_norm': 4.674469947814941, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.6579, 'grad_norm': 6.49739933013916, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 2.7342, 'grad_norm': 2.469393014907837, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[    9, 50256,     9,  ..., 50256,    36, 50256]], device='cuda:0')
+ 
+{'loss': 2.6538, 'grad_norm': 5.1945037841796875, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    51, 50256]], device='cuda:0')
+ 
+{'loss': 3.0278, 'grad_norm': 6.311079502105713, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 2.6114, 'grad_norm': 27.217491149902344, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.9532, 'grad_norm': 5.65982723236084, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    67, 50256]], device='cuda:0')
+ 
+{'loss': 2.5509, 'grad_norm': 4.0070600509643555, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.5925, 'grad_norm': 14.266765594482422, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[   55, 50256,     9,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.7204, 'grad_norm': 4.611423015594482, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 3.0611, 'grad_norm': 13.481633186340332, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 3.0775, 'grad_norm': 6.926791191101074, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[   33, 50256,    52,  ..., 50256,    43, 50256]], device='cuda:0')
+ 
+{'loss': 2.5888, 'grad_norm': 12.72525405883789, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 2.9272, 'grad_norm': 3.403001308441162, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[    9, 50256,    51,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.4191, 'grad_norm': 7.980731010437012, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[   54, 50256,    49,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.777, 'grad_norm': 10.158227920532227, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    49, 50256]], device='cuda:0')
+ 
+{'loss': 2.41, 'grad_norm': 11.379631996154785, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.2175, 'grad_norm': 3.2229602336883545, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 2.2411, 'grad_norm': 5.1151838302612305, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.5192, 'grad_norm': 8.630826950073242, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 2.8282, 'grad_norm': 1.6317082643508911, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 2.1597, 'grad_norm': 1.3376723527908325, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.5, 'grad_norm': 1.0155941247940063, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 2.4066, 'grad_norm': 1.1887437105178833, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.2752, 'grad_norm': 2.6085686683654785, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 2.1145, 'grad_norm': 6.581754684448242, 'learning_rate': 2e-05, 'epoch': 0.06}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 2.5367, 'grad_norm': 1.4330681562423706, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.5329, 'grad_norm': 1.440290093421936, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.7648, 'grad_norm': 2.0199854373931885, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    69, 50256]], device='cuda:0')
+ 
+{'loss': 2.2438, 'grad_norm': 3.481417417526245, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1889, 'grad_norm': 3.55887508392334, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 2.1227, 'grad_norm': 1.6810612678527832, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    88, 50256]], device='cuda:0')
+ 
+{'loss': 2.2171, 'grad_norm': 1.2237005233764648, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1365, 'grad_norm': 2.824817657470703, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[   51, 50256,    71,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 2.2214, 'grad_norm': 0.8148015737533569, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.5637, 'grad_norm': 1.2559722661972046, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.2535, 'grad_norm': 1.1981157064437866, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 2.3584, 'grad_norm': 1.3360445499420166, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    43, 50256]], device='cuda:0')
+ 
+{'loss': 2.4677, 'grad_norm': 1.8267632722854614, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    67, 50256]], device='cuda:0')
+ 
+{'loss': 2.0717, 'grad_norm': 1.4574264287948608, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.2772, 'grad_norm': 2.1786749362945557, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.7552, 'grad_norm': 3.4413156509399414, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[    9, 50256,     9,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1664, 'grad_norm': 3.5375590324401855, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.1776, 'grad_norm': 1.62235426902771, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    51, 50256]], device='cuda:0')
+ 
+{'loss': 2.1541, 'grad_norm': 11.779763221740723, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 2.1686, 'grad_norm': 6.414538860321045, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.0071, 'grad_norm': 0.8960281610488892, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    40, 50256]], device='cuda:0')
+ 
+{'loss': 2.5039, 'grad_norm': 1.2241216897964478, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1529, 'grad_norm': 0.958994448184967, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    67, 50256]], device='cuda:0')
+ 
+{'loss': 2.1054, 'grad_norm': 0.7102134227752686, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.0808, 'grad_norm': 0.9988638162612915, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 2.6556, 'grad_norm': 2.0837886333465576, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    66, 50256]], device='cuda:0')
+ 
+{'loss': 2.055, 'grad_norm': 1.3539538383483887, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.2329, 'grad_norm': 0.8729763031005859, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    45, 50256]], device='cuda:0')
+ 
+{'loss': 2.2841, 'grad_norm': 0.7650982141494751, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.0623, 'grad_norm': 0.6372870802879333, 'learning_rate': 2e-05, 'epoch': 0.07}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 2.2242, 'grad_norm': 0.6963863372802734, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1172, 'grad_norm': 0.8812428712844849, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[   43, 50256,    36,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.0276, 'grad_norm': 1.0156232118606567, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    86, 50256]], device='cuda:0')
+ 
+{'loss': 2.1304, 'grad_norm': 0.5633543729782104, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    44, 50256]], device='cuda:0')
+ 
+{'loss': 1.9754, 'grad_norm': 1.0777214765548706, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.9434, 'grad_norm': 0.6233668327331543, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 1.9253, 'grad_norm': 0.6315619349479675, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    64, 50256]], device='cuda:0')
+ 
+{'loss': 2.0384, 'grad_norm': 0.8935980200767517, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.0433, 'grad_norm': 0.9359526038169861, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.0625, 'grad_norm': 1.2418755292892456, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    36, 50256]], device='cuda:0')
+ 
+{'loss': 2.5047, 'grad_norm': 1.8969377279281616, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.9039, 'grad_norm': 0.72178053855896, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    83, 50256]], device='cuda:0')
+ 
+{'loss': 2.0969, 'grad_norm': 0.6725001335144043, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.8577, 'grad_norm': 0.672913670539856, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 2.0621, 'grad_norm': 0.9982843399047852, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[    9, 50256,     9,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.0048, 'grad_norm': 0.720958948135376, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 2.1002, 'grad_norm': 1.058376669883728, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 1.88, 'grad_norm': 0.5696086883544922, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 2.0686, 'grad_norm': 0.8742969632148743, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.816, 'grad_norm': 0.5872259140014648, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[   47, 50256,    32,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1813, 'grad_norm': 1.0124691724777222, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 2.1146, 'grad_norm': 0.9495656490325928, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.2481, 'grad_norm': 2.637850761413574, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.8656, 'grad_norm': 0.6108431816101074, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1081, 'grad_norm': 1.7512860298156738, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    70, 50256]], device='cuda:0')
+ 
+{'loss': 2.0448, 'grad_norm': 0.6032384634017944, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 2.3573, 'grad_norm': 2.1092097759246826, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 2.2867, 'grad_norm': 1.5473018884658813, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[   47, 50256,    81,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 1.9518, 'grad_norm': 0.6166492104530334, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,    46, 50256]], device='cuda:0')
+ 
+{'loss': 2.152, 'grad_norm': 1.188577651977539, 'learning_rate': 2e-05, 'epoch': 0.08}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.1173, 'grad_norm': 0.5806366801261902, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    75, 50256]], device='cuda:0')
+ 
+{'loss': 1.5444, 'grad_norm': 0.7664377689361572, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    56, 50256]], device='cuda:0')
+ 
+{'loss': 2.3288, 'grad_norm': 1.5413405895233154, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 1.8292, 'grad_norm': 0.5142505168914795, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    50, 50256]], device='cuda:0')
+ 
+{'loss': 2.3857, 'grad_norm': 1.6857579946517944, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    91, 50256]], device='cuda:0')
+ 
+{'loss': 1.1446, 'grad_norm': 2.691502571105957, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.0643, 'grad_norm': 0.5156383514404297, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.0477, 'grad_norm': 0.9151484370231628, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[   47, 50256,    81,  ..., 50256,    84, 50256]], device='cuda:0')
+ 
+{'loss': 1.9355, 'grad_norm': 0.7135133743286133, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[   32, 50256,    44,  ..., 50256,    69, 50256]], device='cuda:0')
+ 
+{'loss': 2.1008, 'grad_norm': 0.7138063311576843, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    72, 50256]], device='cuda:0')
+ 
+{'loss': 2.0205, 'grad_norm': 0.9782581925392151, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 1.9005, 'grad_norm': 0.5195745825767517, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    71, 50256]], device='cuda:0')
+ 
+{'loss': 1.6525, 'grad_norm': 1.487196683883667, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 1.8166, 'grad_norm': 0.7754720449447632, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    78, 50256]], device='cuda:0')
+ 
+{'loss': 1.7768, 'grad_norm': 0.5509017705917358, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    77, 50256]], device='cuda:0')
+ 
+{'loss': 2.025, 'grad_norm': 0.8623355627059937, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    46, 50256]], device='cuda:0')
+ 
+{'loss': 2.0297, 'grad_norm': 0.7540671229362488, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    51, 50256]], device='cuda:0')
+ 
+{'loss': 1.903, 'grad_norm': 0.7772880792617798, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    32, 50256]], device='cuda:0')
+ 
+{'loss': 1.7838, 'grad_norm': 1.2393746376037598, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[   32, 50256,    44,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 1.927, 'grad_norm': 0.7745805978775024, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 1.849, 'grad_norm': 0.5547784566879272, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    45, 50256]], device='cuda:0')
+ 
+{'loss': 2.2154, 'grad_norm': 1.8116426467895508, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    68, 50256]], device='cuda:0')
+ 
+{'loss': 1.4258, 'grad_norm': 1.7339078187942505, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,    81, 50256]], device='cuda:0')
+ 
+{'loss': 1.8415, 'grad_norm': 0.6394857168197632, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,   220, 50256]], device='cuda:0')
+ 
+{'loss': 2.0003, 'grad_norm': 0.6239302754402161, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50256,   198, 50256]], device='cuda:0')
+ 
+{'loss': 1.8415, 'grad_norm': 0.7740225195884705, 'learning_rate': 2e-05, 'epoch': 0.09}
+tensor([[  198, 50256,   198,  ..., 50257, 50257, 50257]], device='cuda:0')
+ 
+error

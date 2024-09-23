@@ -1,0 +1,393 @@
+layer 0 start, now is allocate 18910.8349609375M
+        after c_attn, allocate 19069.0576171875M
+        before attn, allocate 26370.9130859375M
+        after attn, allocate 26471.2255859375M
+layer 1 start, now is allocate 19019.228515625M
+        after c_attn, allocate 19169.326171875M
+        before attn, allocate 26471.181640625M
+        after attn, allocate 26571.619140625M
+layer 2 start, now is allocate 19119.4970703125M
+        after c_attn, allocate 19269.5947265625M
+        before attn, allocate 26571.4501953125M
+        after attn, allocate 26671.8876953125M
+layer 3 start, now is allocate 19219.765625M
+        after c_attn, allocate 19369.86328125M
+        before attn, allocate 26671.71875M
+        after attn, allocate 26772.15625M
+layer 4 start, now is allocate 19320.0341796875M
+        after c_attn, allocate 19470.1318359375M
+        before attn, allocate 26771.9873046875M
+        after attn, allocate 26872.2998046875M
+layer 5 start, now is allocate 19420.302734375M
+        after c_attn, allocate 19570.400390625M
+        before attn, allocate 26872.255859375M
+        after attn, allocate 26972.568359375M
+layer 6 start, now is allocate 19520.5712890625M
+        after c_attn, allocate 19670.6689453125M
+        before attn, allocate 26972.5244140625M
+        after attn, allocate 27072.8369140625M
+layer 7 start, now is allocate 19620.83984375M
+        after c_attn, allocate 19770.9375M
+        before attn, allocate 27072.79296875M
+        after attn, allocate 27173.10546875M
+layer 8 start, now is allocate 19721.1083984375M
+        after c_attn, allocate 19871.2060546875M
+        before attn, allocate 27173.0615234375M
+        after attn, allocate 27273.3740234375M
+layer 9 start, now is allocate 19821.376953125M
+        after c_attn, allocate 19971.474609375M
+        before attn, allocate 27273.330078125M
+        after attn, allocate 27373.642578125M
+layer 10 start, now is allocate 19921.6455078125M
+        after c_attn, allocate 20071.7431640625M
+        before attn, allocate 27373.5986328125M
+        after attn, allocate 27473.9111328125M
+layer 11 start, now is allocate 20021.9140625M
+        after c_attn, allocate 20172.01171875M
+        before attn, allocate 27473.8671875M
+        after attn, allocate 27574.1796875M
+layer 12 start, now is allocate 20122.1826171875M
+        after c_attn, allocate 20272.2802734375M
+        before attn, allocate 27574.1357421875M
+        after attn, allocate 27674.4482421875M
+layer 13 start, now is allocate 20222.451171875M
+        after c_attn, allocate 20372.548828125M
+        before attn, allocate 27674.404296875M
+        after attn, allocate 27774.716796875M
+layer 14 start, now is allocate 20322.7197265625M
+        after c_attn, allocate 20472.8173828125M
+        before attn, allocate 27774.6728515625M
+        after attn, allocate 27874.9853515625M
+layer 15 start, now is allocate 20422.98828125M
+        after c_attn, allocate 20573.0859375M
+        before attn, allocate 27874.94140625M
+        after attn, allocate 27975.25390625M
+layer 16 start, now is allocate 20523.2568359375M
+        after c_attn, allocate 20673.3544921875M
+        before attn, allocate 27975.2099609375M
+        after attn, allocate 28075.5224609375M
+layer 17 start, now is allocate 20623.525390625M
+        after c_attn, allocate 20773.623046875M
+        before attn, allocate 28075.478515625M
+        after attn, allocate 28175.791015625M
+layer 18 start, now is allocate 20723.7939453125M
+        after c_attn, allocate 20873.8916015625M
+        before attn, allocate 28175.7470703125M
+        after attn, allocate 28276.0595703125M
+layer 19 start, now is allocate 20824.0625M
+        after c_attn, allocate 20974.16015625M
+        before attn, allocate 28276.015625M
+        after attn, allocate 28376.328125M
+layer 20 start, now is allocate 20924.3310546875M
+        after c_attn, allocate 21074.4287109375M
+        before attn, allocate 28376.2841796875M
+        after attn, allocate 28476.5966796875M
+layer 21 start, now is allocate 21024.599609375M
+        after c_attn, allocate 21174.697265625M
+        before attn, allocate 28476.552734375M
+        after attn, allocate 28576.865234375M
+layer 22 start, now is allocate 21124.8681640625M
+        after c_attn, allocate 21274.9658203125M
+        before attn, allocate 28576.8212890625M
+        after attn, allocate 28677.1337890625M
+layer 23 start, now is allocate 21225.13671875M
+        after c_attn, allocate 21375.234375M
+        before attn, allocate 28677.08984375M
+        after attn, allocate 28777.40234375M
+layer 24 start, now is allocate 21325.4052734375M
+        after c_attn, allocate 21475.5029296875M
+        before attn, allocate 28777.3583984375M
+        after attn, allocate 28877.6708984375M
+layer 25 start, now is allocate 21425.673828125M
+        after c_attn, allocate 21575.771484375M
+        before attn, allocate 28877.626953125M
+        after attn, allocate 28977.939453125M
+layer 26 start, now is allocate 21525.9423828125M
+        after c_attn, allocate 21676.0400390625M
+        before attn, allocate 28977.8955078125M
+        after attn, allocate 29078.2080078125M
+layer 27 start, now is allocate 21626.2109375M
+        after c_attn, allocate 21776.30859375M
+        before attn, allocate 29078.1640625M
+        after attn, allocate 29178.4765625M
+layer 28 start, now is allocate 21726.4794921875M
+        after c_attn, allocate 21876.5771484375M
+        before attn, allocate 29178.4326171875M
+        after attn, allocate 29278.7451171875M
+layer 29 start, now is allocate 21826.748046875M
+        after c_attn, allocate 21976.845703125M
+        before attn, allocate 29278.701171875M
+        after attn, allocate 29379.013671875M
+layer 30 start, now is allocate 21927.0166015625M
+        after c_attn, allocate 22077.1142578125M
+        before attn, allocate 29378.9697265625M
+        after attn, allocate 29479.2822265625M
+layer 31 start, now is allocate 22027.28515625M
+        after c_attn, allocate 22177.3828125M
+        before attn, allocate 29479.23828125M
+        after attn, allocate 29579.55078125M
+layer 32 start, now is allocate 22127.5537109375M
+        after c_attn, allocate 22277.6513671875M
+        before attn, allocate 29579.5068359375M
+        after attn, allocate 29679.8193359375M
+layer 33 start, now is allocate 22227.822265625M
+        after c_attn, allocate 22377.919921875M
+        before attn, allocate 29679.775390625M
+        after attn, allocate 29780.087890625M
+layer 34 start, now is allocate 22328.0908203125M
+        after c_attn, allocate 22478.1884765625M
+        before attn, allocate 29780.0439453125M
+        after attn, allocate 29880.3564453125M
+layer 35 start, now is allocate 22428.359375M
+        after c_attn, allocate 22578.45703125M
+        before attn, allocate 29880.3125M
+        after attn, allocate 29980.625M
+layer 36 start, now is allocate 22528.6279296875M
+        after c_attn, allocate 22678.7255859375M
+        before attn, allocate 29980.5810546875M
+        after attn, allocate 30080.8935546875M
+layer 37 start, now is allocate 22628.896484375M
+        after c_attn, allocate 22778.994140625M
+        before attn, allocate 30080.849609375M
+        after attn, allocate 30181.162109375M
+layer 38 start, now is allocate 22729.1650390625M
+        after c_attn, allocate 22879.2626953125M
+        before attn, allocate 30181.1181640625M
+        after attn, allocate 30281.4306640625M
+layer 39 start, now is allocate 22829.43359375M
+        after c_attn, allocate 22979.53125M
+        before attn, allocate 30281.38671875M
+        after attn, allocate 30381.69921875M
+layer 40 start, now is allocate 22929.7021484375M
+        after c_attn, allocate 23079.7998046875M
+        before attn, allocate 30381.6552734375M
+        after attn, allocate 30481.9677734375M
+layer 41 start, now is allocate 23029.970703125M
+        after c_attn, allocate 23180.068359375M
+        before attn, allocate 30481.923828125M
+        after attn, allocate 30582.236328125M
+layer 42 start, now is allocate 23130.2392578125M
+        after c_attn, allocate 23280.3369140625M
+        before attn, allocate 30582.1923828125M
+        after attn, allocate 30682.5048828125M
+layer 43 start, now is allocate 23230.5078125M
+        after c_attn, allocate 23380.60546875M
+        before attn, allocate 30682.4609375M
+        after attn, allocate 30782.7734375M
+layer 44 start, now is allocate 23330.7763671875M
+        after c_attn, allocate 23480.8740234375M
+        before attn, allocate 30782.7294921875M
+        after attn, allocate 30883.0419921875M
+layer 45 start, now is allocate 23431.044921875M
+        after c_attn, allocate 23581.142578125M
+        before attn, allocate 30882.998046875M
+        after attn, allocate 30983.310546875M
+layer 46 start, now is allocate 23531.3134765625M
+        after c_attn, allocate 23681.4111328125M
+        before attn, allocate 30983.2666015625M
+        after attn, allocate 31083.5791015625M
+layer 47 start, now is allocate 23631.58203125M
+        after c_attn, allocate 23781.6796875M
+        before attn, allocate 31083.53515625M
+        after attn, allocate 31183.84765625M
+layer 47 start, now is allocate 23627.22412109375M
+        after c_attn, allocate 23842.22021484375M
+        before attn, allocate 31144.07568359375M
+        after attn, allocate 76044.28759765625M
+layer 46 start, now is allocate 23527.78662109375M
+        after c_attn, allocate 23742.78271484375M
+        before attn, allocate 31044.63818359375M
+        after attn, allocate 75944.85009765625M
+layer 45 start, now is allocate 23428.34912109375M
+        after c_attn, allocate 23643.34521484375M
+        before attn, allocate 30945.20068359375M
+        after attn, allocate 75845.41259765625M
+layer 44 start, now is allocate 23328.91162109375M
+        after c_attn, allocate 23543.90771484375M
+        before attn, allocate 30845.76318359375M
+        after attn, allocate 75745.97509765625M
+layer 43 start, now is allocate 23229.47412109375M
+        after c_attn, allocate 23444.47021484375M
+        before attn, allocate 30746.32568359375M
+        after attn, allocate 75646.53759765625M
+layer 42 start, now is allocate 23130.03662109375M
+        after c_attn, allocate 23345.03271484375M
+        before attn, allocate 30646.88818359375M
+        after attn, allocate 75547.10009765625M
+layer 41 start, now is allocate 23030.59912109375M
+        after c_attn, allocate 23245.59521484375M
+        before attn, allocate 30547.45068359375M
+        after attn, allocate 75447.66259765625M
+layer 40 start, now is allocate 22931.16162109375M
+        after c_attn, allocate 23146.15771484375M
+        before attn, allocate 30448.01318359375M
+        after attn, allocate 75348.22509765625M
+layer 39 start, now is allocate 22831.72412109375M
+        after c_attn, allocate 23046.72021484375M
+        before attn, allocate 30348.57568359375M
+        after attn, allocate 75248.78759765625M
+layer 38 start, now is allocate 22732.28662109375M
+        after c_attn, allocate 22947.28271484375M
+        before attn, allocate 30249.13818359375M
+        after attn, allocate 75149.35009765625M
+layer 37 start, now is allocate 22632.84912109375M
+        after c_attn, allocate 22847.84521484375M
+        before attn, allocate 30149.70068359375M
+        after attn, allocate 75049.91259765625M
+layer 36 start, now is allocate 22533.41162109375M
+        after c_attn, allocate 22748.40771484375M
+        before attn, allocate 30050.26318359375M
+        after attn, allocate 74950.47509765625M
+layer 35 start, now is allocate 22433.97412109375M
+        after c_attn, allocate 22648.97021484375M
+        before attn, allocate 29950.82568359375M
+        after attn, allocate 74851.03759765625M
+layer 34 start, now is allocate 22334.53662109375M
+        after c_attn, allocate 22549.53271484375M
+        before attn, allocate 29851.38818359375M
+        after attn, allocate 74751.60009765625M
+layer 33 start, now is allocate 22235.09912109375M
+        after c_attn, allocate 22450.09521484375M
+        before attn, allocate 29751.95068359375M
+        after attn, allocate 74652.16259765625M
+layer 32 start, now is allocate 22135.66162109375M
+        after c_attn, allocate 22350.65771484375M
+        before attn, allocate 29652.51318359375M
+        after attn, allocate 74552.72509765625M
+layer 31 start, now is allocate 22036.22412109375M
+        after c_attn, allocate 22251.22021484375M
+        before attn, allocate 29553.07568359375M
+        after attn, allocate 74453.28759765625M
+layer 30 start, now is allocate 21936.78662109375M
+        after c_attn, allocate 22151.78271484375M
+        before attn, allocate 29453.63818359375M
+        after attn, allocate 74353.85009765625M
+layer 29 start, now is allocate 21837.34912109375M
+        after c_attn, allocate 22052.34521484375M
+        before attn, allocate 29354.20068359375M
+        after attn, allocate 74254.41259765625M
+layer 28 start, now is allocate 21737.91162109375M
+        after c_attn, allocate 21952.90771484375M
+        before attn, allocate 29254.76318359375M
+        after attn, allocate 74154.97509765625M
+layer 27 start, now is allocate 21638.47412109375M
+        after c_attn, allocate 21853.47021484375M
+        before attn, allocate 29155.32568359375M
+        after attn, allocate 74055.53759765625M
+layer 26 start, now is allocate 21539.03662109375M
+        after c_attn, allocate 21754.03271484375M
+        before attn, allocate 29055.88818359375M
+        after attn, allocate 73956.10009765625M
+layer 25 start, now is allocate 21439.59912109375M
+        after c_attn, allocate 21654.59521484375M
+        before attn, allocate 28956.45068359375M
+        after attn, allocate 73856.66259765625M
+layer 24 start, now is allocate 21340.16162109375M
+        after c_attn, allocate 21555.15771484375M
+        before attn, allocate 28857.01318359375M
+        after attn, allocate 73757.22509765625M
+layer 23 start, now is allocate 21240.72412109375M
+        after c_attn, allocate 21455.72021484375M
+        before attn, allocate 28757.57568359375M
+        after attn, allocate 73657.78759765625M
+layer 22 start, now is allocate 21141.28662109375M
+        after c_attn, allocate 21356.28271484375M
+        before attn, allocate 28658.13818359375M
+        after attn, allocate 73558.35009765625M
+layer 21 start, now is allocate 21041.84912109375M
+        after c_attn, allocate 21256.84521484375M
+        before attn, allocate 28558.70068359375M
+        after attn, allocate 73458.91259765625M
+layer 20 start, now is allocate 20942.41162109375M
+        after c_attn, allocate 21157.40771484375M
+        before attn, allocate 28459.26318359375M
+        after attn, allocate 73359.47509765625M
+layer 19 start, now is allocate 20842.97412109375M
+        after c_attn, allocate 21057.97021484375M
+        before attn, allocate 28359.82568359375M
+        after attn, allocate 73260.03759765625M
+layer 18 start, now is allocate 20743.53662109375M
+        after c_attn, allocate 20958.53271484375M
+        before attn, allocate 28260.38818359375M
+        after attn, allocate 73160.60009765625M
+layer 17 start, now is allocate 20644.09912109375M
+        after c_attn, allocate 20859.09521484375M
+        before attn, allocate 28160.95068359375M
+        after attn, allocate 73061.16259765625M
+layer 16 start, now is allocate 20544.66162109375M
+        after c_attn, allocate 20759.65771484375M
+        before attn, allocate 28061.51318359375M
+        after attn, allocate 72961.72509765625M
+layer 15 start, now is allocate 20445.22412109375M
+        after c_attn, allocate 20660.22021484375M
+        before attn, allocate 27962.07568359375M
+        after attn, allocate 72862.28759765625M
+layer 14 start, now is allocate 20345.78662109375M
+        after c_attn, allocate 20560.78271484375M
+        before attn, allocate 27862.63818359375M
+        after attn, allocate 72762.85009765625M
+layer 13 start, now is allocate 20246.34912109375M
+        after c_attn, allocate 20461.34521484375M
+        before attn, allocate 27763.20068359375M
+        after attn, allocate 72663.41259765625M
+layer 12 start, now is allocate 20146.91162109375M
+        after c_attn, allocate 20361.90771484375M
+        before attn, allocate 27663.76318359375M
+        after attn, allocate 72563.97509765625M
+layer 11 start, now is allocate 20047.47412109375M
+        after c_attn, allocate 20262.47021484375M
+        before attn, allocate 27564.32568359375M
+        after attn, allocate 72464.53759765625M
+layer 10 start, now is allocate 19948.03662109375M
+        after c_attn, allocate 20163.03271484375M
+        before attn, allocate 27464.88818359375M
+        after attn, allocate 72365.10009765625M
+layer 9 start, now is allocate 19848.59912109375M
+        after c_attn, allocate 20063.59521484375M
+        before attn, allocate 27365.45068359375M
+        after attn, allocate 72265.66259765625M
+layer 8 start, now is allocate 19749.16162109375M
+        after c_attn, allocate 19964.15771484375M
+        before attn, allocate 27266.01318359375M
+        after attn, allocate 72166.22509765625M
+layer 7 start, now is allocate 19649.72412109375M
+        after c_attn, allocate 19864.72021484375M
+        before attn, allocate 27166.57568359375M
+        after attn, allocate 72066.78759765625M
+layer 6 start, now is allocate 19550.28662109375M
+        after c_attn, allocate 19765.28271484375M
+        before attn, allocate 27067.13818359375M
+        after attn, allocate 71967.35009765625M
+layer 5 start, now is allocate 19450.84912109375M
+        after c_attn, allocate 19665.84521484375M
+        before attn, allocate 26967.70068359375M
+        after attn, allocate 71867.91259765625M
+layer 4 start, now is allocate 19351.41162109375M
+        after c_attn, allocate 19566.40771484375M
+        before attn, allocate 26868.26318359375M
+        after attn, allocate 71768.47509765625M
+layer 3 start, now is allocate 19251.97412109375M
+        after c_attn, allocate 19466.97021484375M
+        before attn, allocate 26768.82568359375M
+        after attn, allocate 71669.03759765625M
+layer 2 start, now is allocate 19152.53662109375M
+        after c_attn, allocate 19367.53271484375M
+        before attn, allocate 26669.38818359375M
+        after attn, allocate 71569.60009765625M
+layer 1 start, now is allocate 19053.09912109375M
+        after c_attn, allocate 19268.09521484375M
+        before attn, allocate 26569.95068359375M
+        after attn, allocate 71470.16259765625M
+layer 0 start, now is allocate 18953.66162109375M
+        after c_attn, allocate 19168.65771484375M
+        before attn, allocate 26470.51318359375M
+        after attn, allocate 71370.72509765625M
+
+
+
+layer 0 start, now is allocate 18910.9599609375M
+        after c_attn, allocate 19134.0810546875M
+        before attn, allocate 26435.9365234375M
+        after attn, allocate 71336.2734375M
+layer 1 start, now is allocate 72278.9716796875M
+        after c_attn, allocate 72493.9677734375M

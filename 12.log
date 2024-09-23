@@ -1,0 +1,155 @@
+config is !!!!!!
+GPT2Config {
+  "activation_function": "gelu_new",
+  "architectures": [
+    "GPT2LMHeadModel"
+  ],
+  "attn_pdrop": 0.1,
+  "block_ratio": 0.0625,
+  "bos_token_id": 50256,
+  "embd_pdrop": 0.1,
+  "eos_token_id": 50256,
+  "flash_attention": false,
+  "initializer_range": 0.02,
+  "layer_norm_epsilon": 1e-05,
+  "model_type": "gpt2",
+  "n_ctx": 16384,
+  "n_embd": 1600,
+  "n_head": 25,
+  "n_inner": null,
+  "n_layer": 48,
+  "n_positions": 16384,
+  "output_past": true,
+  "reorder_and_upcast_attn": false,
+  "resid_pdrop": 0.1,
+  "scale_attn_by_inverse_layer_idx": false,
+  "scale_attn_weights": true,
+  "summary_activation": null,
+  "summary_first_dropout": 0.1,
+  "summary_proj_to_labels": true,
+  "summary_type": "cls_index",
+  "summary_use_proj": true,
+  "task_specific_params": {
+    "text-generation": {
+      "do_sample": true,
+      "max_length": 50
+    }
+  },
+  "transformers_version": "4.42.4",
+  "use_cache": true,
+  "vocab_size": 50257
+}
+
+skip transformer.h.0.attn.bias
+skip transformer.h.1.attn.bias
+skip transformer.h.2.attn.bias
+skip transformer.h.3.attn.bias
+skip transformer.h.4.attn.bias
+skip transformer.h.5.attn.bias
+skip transformer.h.6.attn.bias
+skip transformer.h.7.attn.bias
+skip transformer.h.8.attn.bias
+skip transformer.h.9.attn.bias
+skip transformer.h.10.attn.bias
+skip transformer.h.11.attn.bias
+skip transformer.h.12.attn.bias
+skip transformer.h.13.attn.bias
+skip transformer.h.14.attn.bias
+skip transformer.h.15.attn.bias
+skip transformer.h.16.attn.bias
+skip transformer.h.17.attn.bias
+skip transformer.h.18.attn.bias
+skip transformer.h.19.attn.bias
+skip transformer.h.20.attn.bias
+skip transformer.h.21.attn.bias
+skip transformer.h.22.attn.bias
+skip transformer.h.23.attn.bias
+skip transformer.h.24.attn.bias
+skip transformer.h.25.attn.bias
+skip transformer.h.26.attn.bias
+skip transformer.h.27.attn.bias
+skip transformer.h.28.attn.bias
+skip transformer.h.29.attn.bias
+skip transformer.h.30.attn.bias
+skip transformer.h.31.attn.bias
+skip transformer.h.32.attn.bias
+skip transformer.h.33.attn.bias
+skip transformer.h.34.attn.bias
+skip transformer.h.35.attn.bias
+skip transformer.h.36.attn.bias
+skip transformer.h.37.attn.bias
+skip transformer.h.38.attn.bias
+skip transformer.h.39.attn.bias
+skip transformer.h.40.attn.bias
+skip transformer.h.41.attn.bias
+skip transformer.h.42.attn.bias
+skip transformer.h.43.attn.bias
+skip transformer.h.44.attn.bias
+skip transformer.h.45.attn.bias
+skip transformer.h.46.attn.bias
+skip transformer.h.47.attn.bias
+model name: gpt2_xl
+torch.Size([16384, 1600])
+GPT2LMHeadModel(
+  (transformer): GPT2Model(
+    (wte): Embedding(50257, 1600)
+    (wpe): Embedding(16384, 1600)
+    (drop): Dropout(p=0.1, inplace=False)
+    (h): ModuleList(
+      (0-47): 48 x GPT2Block(
+        (ln_1): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+        (attn): GPT2Attention(
+          (c_attn): Conv1D()
+          (c_proj): Conv1D()
+          (attn_dropout): Dropout(p=0.1, inplace=False)
+          (resid_dropout): Dropout(p=0.1, inplace=False)
+        )
+        (ln_2): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+        (mlp): GPT2MLP(
+          (c_fc): Conv1D()
+          (c_proj): Conv1D()
+          (act): NewGELUActivation()
+          (dropout): Dropout(p=0.1, inplace=False)
+        )
+      )
+    )
+    (ln_f): LayerNorm((1600,), eps=1e-05, elementwise_affine=True)
+  )
+  (lm_head): Linear(in_features=1600, out_features=50257, bias=False)
+)
+DatasetDict({
+    train: Dataset({
+        features: ['short_book_title', 'publication_date', 'input_ids'],
+        num_rows: 3000
+    })
+    validation: Dataset({
+        features: ['short_book_title', 'publication_date', 'input_ids'],
+        num_rows: 150
+    })
+})
+[2024-08-25 11:09:25,405] [INFO] [real_accelerator.py:203:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[93m [WARNING] [0m async_io requires the dev libaio .so object and headers but these were not found.
+[93m [WARNING] [0m async_io: please install the libaio-dev package with apt
+[93m [WARNING] [0m If libaio is already installed (perhaps from source), try setting the CFLAGS and LDFLAGS environment variables to where it can be found.
+[93m [WARNING] [0m Please specify the CUTLASS repo directory as environment variable $CUTLASS_PATH
+[93m [WARNING] [0m sparse_attn requires a torch version >= 1.5 and < 2.0 but detected 2.0
+[93m [WARNING] [0m using untested triton version (2.0.0), only 1.0.0 is known to be compatible
+Parameter containing:
+tensor([[ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        [ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        [ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        ...,
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089],
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089],
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089]],
+       device='cuda:0', requires_grad=True)
+{'loss': 8.6752, 'grad_norm': 2.248624801635742, 'learning_rate': 1.0000000000000002e-06, 'epoch': 0.0}
+Parameter containing:
+tensor([[ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        [ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        [ 0.0673, -0.0098, -0.0134,  ...,  0.0420,  0.1436,  0.0163],
+        ...,
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089],
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089],
+        [ 0.0124,  0.0102, -0.0024,  ...,  0.0052,  0.0106, -0.0089]],
+       device='cuda:0', requires_grad=True)
